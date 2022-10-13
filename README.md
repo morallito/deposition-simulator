@@ -39,8 +39,38 @@ m=0  |
        n=0 n=1 n=2  .   .   .   n
 ```
 
-### Plotter class
+### <a name="plotter_class"></a> Plotter class
 
+`Plotter (num_lines:int,num_columns:int)`
+
+Plotter constructor takes 2 arguments, Matrix number of columns, and matrix number of lines.
+```
+foo = Plotter(num_lines:int,num_columns:int)
+```
+
+
+`Plotter.set_matrix(A[num_lines][num_columns])`
+
+Plotter.set_matrix method populates the Plotter matrix element. 
+A is a matrix, each element is a 0 (white) or 1 (black).
+
+A should respect the size defined during the [Plotter](#plotter_class) creation. Matrix items should be 0 or 1 and Integers. 
+
+```
+foo = Plotter(num_lines:int,num_columns:int)
+foo.set_matrix(A[num_lines][num_columns])
+```
+
+
+`Plotter.plot(figure_name:str)`
+
+Plotter.plot saves the generated figure as png, in the path parsed on `figure_name` variable. 
+
+```
+foo = Plotter(num_lines:int,num_columns:int)
+foo.set_matrix(A[num_lines][num_columns])
+foo.plot(figure_name:str)
+```
 ### Methods 
 
 ## Balistic deposition simulator
