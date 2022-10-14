@@ -15,7 +15,6 @@ class RandomDeposition ():
     def __stop_criteria(self, value) ->bool:
         return True if value == self.__height else False
 
-
     def simulate(self) -> bool:
         stop = False
         while stop != True:
@@ -39,11 +38,3 @@ class RandomDeposition ():
 
     def get_output_surface (self): 
         return self.__surface if self.__is_simulated == True else None 
-
-
-if __name__ == '__main__' :
-    foo = RandomDeposition(100, 20)
-    #print(foo.get_output_matrix())
-    print(foo.simulate())
-    print(foo.get_output_surface())
-    print(foo.get_output_matrix())

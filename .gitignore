@@ -1,6 +1,9 @@
 # Add local Venv to be ignored
 venv3106/*
 
+# Ignore all the images
+*.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
