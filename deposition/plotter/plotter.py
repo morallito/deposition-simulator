@@ -12,8 +12,8 @@ class Plotter ():
         try:
             self.__num_rows = int(num_lines)
             self.__num_columns = int(num_columns)
-        except ValueError :
-            raise (ValueError("num_lines and num_columns should be integers"))
+        except ValueError as ve:
+            raise (ValueError("num_lines and num_columns should be integers")) from ve
     
 
     def __is_valid_item (self, num:int) -> bool:
