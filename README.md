@@ -3,6 +3,8 @@
 This repo is dedicated to hosting all python files used during the discipline of computational mathematical modeling principles, 
 taught at CEFET MG, 2022/2. 
 
+[![codecov](https://codecov.io/gh/morallito/deposition-simulator/branch/master/graph/badge.svg?token=23FCKJWBDM)](https://codecov.io/gh/morallito/deposition-simulator)
+
 
 ## Repo structure
 Each folder in the root dir is a python module, and each odule is used for one type of simulation. The plotter.py is the module used to plot the simulation results. The main file, in the root directory, is used as a CLI, to receive the simulation type and parameters, and run the simulator and the plotter. Each simulator and the plotter has it's own readme file, where the usage of it is documented. 
