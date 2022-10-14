@@ -6,10 +6,11 @@ import time
 
 def test_plotter_init_success ():
     p = Plotter(10,10)
+    assert type(p) is Plotter
 
+@pytest.mark.xfail(raises=ValueError)
 def test_plotter_init_fail ():
-    with pytest.raises(ValueError):
-        p = Plotter(10, 'a')
+    p = Plotter(10, 'a')
 
 def test_matrix_setter ():
     plt_tst = Plotter(10,10)
