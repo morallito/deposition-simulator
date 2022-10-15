@@ -45,8 +45,6 @@ class  BalisticDeposition():
 
     def __deposit_block(self, number):
         height  =    int(self.__where_should_attatch(number))
-        print(height)
-        print(number)
         self.__matrix[height][number] = 1
 
     def simulate(self) -> bool:
