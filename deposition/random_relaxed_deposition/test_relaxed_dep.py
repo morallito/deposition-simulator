@@ -44,8 +44,3 @@ def test_get_surface_not_simulated():
     rds = RelaxedDeposition(max_height = height, surface_lenght = lenght)
     result = rds.get_output_surface()
     assert result == None
-
-
-
-
-
