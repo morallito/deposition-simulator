@@ -11,6 +11,8 @@ class RelaxedDeposition ():
             self.__is_simulated = False
         except ValueError as ve:
             raise ValueError(f'max_height and surface_lenght should be <int> and <int> not { type(max_height) } and {type(surface_lenght)}') from ve
+        if (surface_lenght < 3 ):
+            raise ValueError(f'Surface Length should be bigger than 3')
 
     def __stop_criteria(self, value) ->bool:
         return True if value == self.__height else False
