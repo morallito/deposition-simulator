@@ -1,13 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 class Plotter ():
-    """
-    Plotter - A class that receives a binary matrix M (n x m)
-    and provides plotting optios to save it as images. 
-    """
-
     def __init__(self,num_lines:int,num_columns:int) -> None:
         try:
             self.__num_rows = int(num_lines)
@@ -15,26 +9,15 @@ class Plotter ():
         except ValueError as ve:
             raise (ValueError("num_lines and num_columns should be integers")) from ve
     
-
     def __is_valid_item (self, num:int) -> bool:
-        """
-        Checks if the matrix item are valid (1 or 0)
-        """
         return True if (num == 1 or num ==0 ) else False
-
-
 
     def __invert_colors(self):
         for row in range(self.__num_rows):
             for column in range(self.__num_columns):
                 self.__matrix[row][column] = 1 if self.__matrix[row][column]==0 else 0 
 
-
     def set_matrix(self, A) -> bool:
-        """
-        Define the matrix that will be printed.
-        Checks for dimentional consistency and 
-        """
         rows = len(A)
         columns = len(A[0])
 
@@ -52,15 +35,9 @@ class Plotter ():
         return True
 
     def plot(self, fig_name:str) -> bool:
-        """
-        Prints the matrix using matshow
-        """
-        try:
-            self.__invert_colors()
-            inverted_matrix = self.__matrix[::-1]
-            plt.matshow(inverted_matrix,cmap='gist_yarg_r', vmin=0, vmax=1)
-            plt.axis(False)
-            plt.savefig(fig_name + '.png', format='png')
-            return True
-        except Exception as e:
-            raise (e)
+        self.__invert_colors()
+        inverted_matrix = self.__matrix[::-1]
+        plt.matshow(inverted_matrix,cmap='gist_yarg_r', vmin=0, vmax=1)
+        plt.axis(False)
+        plt.savefig(fig_name + '.png', format='png')
+        return True
