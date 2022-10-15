@@ -4,8 +4,8 @@ from relaxed_deposition import RelaxedDeposition
 
 
 def test_create_fail():
-    height = random.randint(1,100)
-    lenght = random.randint(1,20)
+    height = random.randint(3,100)
+    lenght = random.randint(3,20)
     with pytest.raises(ValueError):
         rds = RelaxedDeposition(max_height = height, surface_lenght='a')
 
