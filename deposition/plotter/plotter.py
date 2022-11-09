@@ -3,11 +3,6 @@ import numpy as np
 
 
 class Plotter ():
-    """
-    Plotter - A class that receives a binary matrix M (n x m)
-    and provides plotting optios to save it as images. 
-    """
-
     def __init__(self,num_lines:int,num_columns:int) -> None:
         try:
             self.__num_rows = int(num_lines)
@@ -61,6 +56,17 @@ class Plotter ():
             plt.matshow(inverted_matrix,cmap='gist_yarg_r', vmin=0, vmax=1)
             plt.axis(False)
             plt.savefig(fig_name + '.png', format='png')
+            plt.close()
             return True
         except Exception as e:
             raise (e)
+
+
+    def plot_rugosity(self, rugosity_vector, fig_name):
+
+
+        plt.title(fig_name)
+        plt.xlabel("Time axis")
+        plt.ylabel("Rugosity axis")
+        plt.plot(range(len(rugosity_vector)), rugosity_vector, color ="blue")
+        plt.savefig(fig_name + '.png', format='png')
